@@ -5,9 +5,6 @@
 **git log** 查看提交日志
 
 **git commit** 提交
-	
-	说明：
-		如果直接使用git commit 提交文件而没有
 
 **git status** 查看当前目录的状态
 
