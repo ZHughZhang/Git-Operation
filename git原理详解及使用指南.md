@@ -14,4 +14,4 @@
 		你当前有untracked files（未追踪的文件），文件名字为xxxx或者有待提交的文件（Changes to be commited），（unstaged）文件已经放在了暂存区（staging area）
 		你可以使用git add来追踪文件
 
-**git add** 追踪文件
+**git add** 追踪文件 将文件添加至缓存区
