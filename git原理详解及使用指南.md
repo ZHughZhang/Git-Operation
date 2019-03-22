@@ -18,7 +18,8 @@
 
 **git push** 将本地仓库的代码提交打远程仓库
 
- * **git push --set-upstream origin "branch-name"**将本地分支提交到远程服务器
+ * **git push --set-upstream origin branch-name**设置本地分支追踪远程分支
+ * **git push origin branch-name** 将本地的分支提交到远程服务器
  * **git push origin --delete branch-name**删除远程服务器上的分支
  * **git branch -d branch-name** 删除本地分支
 
@@ -35,5 +36,23 @@
 **git pull** 将中央仓库的最新代码拉取下来
 	
 	当多人合作时每次提交代码或者工作任务之前，需要先pull 然后在进行push
-	
+
+###git branch
+* **git branch branch-name** 创建一个叫branch-name 的分支
+* **git branch**创建本地分支
+* **git branch -a** 查看所有分支列表，包括本地和远程* **git branch -r** 查看远程版本库分支列表
+* **git branch -d branch-name**删除本地分支
+* **git branch -vv**可以查看本地分支对应的远程分支
+* **git branch -m oldName newName** 给分支重命名
+
+###git checkout
+1. 操作文件 
+ * **git checkout filename**放弃单个文件修改
+ * **git checkout .**放弃当前目录下的修改  
+2. 操作分支
+
+* **git checkout branch-name** 将分支切换到branch-name下
+* **git checkout -b master**
+如果分支存在则只切换分支，若不存在则创建并切换到master分支，repo start是对git checkout -b这个命令的封装，将所有仓库的分支都切换到master，master是分支名。
+
 
