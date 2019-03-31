@@ -18,10 +18,13 @@
 
 ###git push
 * **git push** 将本地仓库的代码提交打远程仓库
+=======
+**git push** 将本地仓库的代码提交打远程仓库
 
-* **git push --set-upstream origin branch-name**设置本地分支追踪远程分支
-* **git push origin branch-name** 将本地的分支提交到远程服务器
-* **git push origin --delete branch-name**删除远程服务器上的分支
+ * **git push --set-upstream origin branch-name**设置本地分支追踪远程分支
+ * **git push origin branch-name** 将本地分支提交到远程服务器
+ * **git push origin --delete branch-name**删除远程服务器上的分支
+ * **git branch -d branch-name** 删除本地分支
 
 ####总结：
 	
