@@ -57,5 +57,11 @@
 
 ###merge
 
-
+merge含义：
+ 
+ marge的意思是合并，从目标commit和当前commit（即HEAD所指向的commit）分叉位置起，把目标commit的路径上所有commit的内容一并用到当前commit，然后自动生成一个新的commit。
+ 
+ 命令： git merge branch1
+ 
+ 
 
