@@ -4,7 +4,14 @@
 	
 **git log** 查看提交日志
 
-**git commit** 提交
+###git commit
+
+* **git commit -m "the commit message"** 提交添加到缓存仓库的文件 并添加说明
+* **git commit -a**会先把所有已经track的文件的改动`git add`进来，然后提交(有点像svn的一次提交,不用先暂存)。对于没有track的文件,还是需要执行`git add <file>` 命令。
+* **git commit --amend**  增补提交，会使用与当前提交节点相同的父节点进行一次新的提交，旧的提交将会被取消。
+
+
+
 
 **git status** 查看当前目录的状态
 
@@ -13,18 +20,25 @@
 		当前branch没有落后于origin/master
 		你当前有untracked files（未追踪的文件），文件名字为xxxx或者有待提交的文件（Changes to be commited），（unstaged）文件已经放在了暂存区（staging area）
 		你可以使用git add来追踪文件
+		
+		
+###git add
 
-**git add** 追踪文件 将文件添加至缓存区
+* **git add \<path\>** 追踪文件 将文件添加至缓存区
+* **git add .**  将所有修改添加到暂存区
+* **git add -i** 查看被修改过或已删除文件但没有提交的文件，并通过其revert子命令可以查看<path>中所有未跟踪的文件，同时进入一个子命令系统。
+* **git add -A** 表示把中所有跟踪文件中被修改过或已删除文件和所有未跟踪的文件信息添加到索引库
+* **git add \*Controller**   将以Controller结尾的文件的所有修改添加到暂存区
+* **git add Hello\***  将所有以Hello开头的文件的修改添加到暂存区 例如:HelloWorld.txt,Hello.java,HelloGit.txt ...
+* **git add Hello?**  将以Hello开头后面只有一位的文件的修改提交到暂存区 例如:Hello1.txt,HelloA.java 如果是HelloGit.txt或者Hello.java是不会被添加的
+* **git add -u [\<path>]** 把<path>中所有跟踪文件中被修改过或已删除文件的信息添加到索引库。它不会处理那些不被跟踪的文件。省略<path>表示 . ,即当前目录。
 
 ###git push
 * **git push** 将本地仓库的代码提交打远程仓库
-=======
-**git push** 将本地仓库的代码提交打远程仓库
-
- * **git push --set-upstream origin branch-name**设置本地分支追踪远程分支
- * **git push origin branch-name** 将本地分支提交到远程服务器
- * **git push origin --delete branch-name**删除远程服务器上的分支
- * **git branch -d branch-name** 删除本地分支
+* **git push --set-upstream origin branch-name**设置本地分支追踪远程分支
+* **git push origin branch-name** 将本地分支提交到远程服务器
+* **git push origin --delete branch-name**删除远程服务器上的分支
+* **git branch -d branch-name** 删除本地分支
 
 ####总结：
 	
@@ -89,8 +103,19 @@ merge含义：
 	
 	1. 解决冲突
 		
-		Git虽然没有帮完成自动merge，但它对文件做了一些处理，把两个分支的冲突内容放在一起，并用符号标出了他们的边界以及出处。格式：<<<<<<<<<HEAD  `======` >>>>>>>branch_name
+		Git虽然没有帮完成自动merge，但它对文件做了一些处理，把两个分支的冲突内容放在一起，并用符号标出了他们的边界以及出处。格式：<<<<<<<<\<HEAD  ======>>>>>>>branch_name
+		假设你决定保留 HEAD 的修改，那么只要删除掉 branch_name 的修改，再把 Git 添加的那三行 <<< === >>> 辅助文字也删掉，保存文件退出，所谓的「解决掉冲突」就完成了或者使用merge工具来解决冲突
+		
 	2. 手动commit一下
+	
+	>放弃解决冲突，取消merge ：git merge --abort
+* 特殊情况2  HEAD领先于目标commit:Git 什么也不做，空操作
+
+* 特殊情况3：HEAD落后于目标commit
+
+
+
+
 
  
  
