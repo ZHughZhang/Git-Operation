@@ -103,7 +103,7 @@ merge含义：
 	
 	1. 解决冲突
 		
-		Git虽然没有帮完成自动merge，但它对文件做了一些处理，把两个分支的冲突内容放在一起，并用符号标出了他们的边界以及出处。格式：<<<<<<<<\<HEAD  ======>>>>>>>branch_name
+		Git虽然没有帮完成自动merge，但它对文件做了一些处理，把两个分支的冲突内容放在一起，并用符号标出了他们的边界以及出处。格式：<<<<<<<<\<HEAD  ======\>>>>>>>branch_name
 		假设你决定保留 HEAD 的修改，那么只要删除掉 branch_name 的修改，再把 Git 添加的那三行 <<< === >>> 辅助文字也删掉，保存文件退出，所谓的「解决掉冲突」就完成了或者使用merge工具来解决冲突
 		
 	2. 手动commit一下
@@ -111,7 +111,23 @@ merge含义：
 	>放弃解决冲突，取消merge ：git merge --abort
 * 特殊情况2  HEAD领先于目标commit:Git 什么也不做，空操作
 
-* 特殊情况3：HEAD落后于目标commit
+* 特殊情况3：HEAD落后于目标commit:fast-forward。
+
+
+###Feature Branching
+
+
+> 简介:
+> 这种工作流的核心内容可以总结为两点；
+> 
+> 1.任何新的功能（feature）或者bug修复全都新建一个branch来写
+> 
+> 2.branch写完后，合并到master，然后删掉这个branch
+
+
+
+
+	
 
 
 
