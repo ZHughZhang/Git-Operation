@@ -147,7 +147,9 @@ merge含义：
 * **git HEAD**比对工作目录和上一条提交
 
 
-### git rebase
+### git rebase（重新设置基础点）
+
+![重新设置挤出点](https://user-gold-cdn.xitu.io/2017/11/30/1600abd620a8e28c?imageslim)
 
 
 
