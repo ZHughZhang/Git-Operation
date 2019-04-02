@@ -114,7 +114,7 @@ merge含义：
 * 特殊情况3：HEAD落后于目标commit:fast-forward。
 
 
-###Feature Branching
+##Feature Branching
 
 
 > 简介:
@@ -126,10 +126,26 @@ merge含义：
 
 
 
-###查看修改了什么
+##查看修改了什么
+
+###git log
 
 * **git log** 查看提交日志
 * **git log -p（--patch）** 查看详细历史
+* **git log stat** 查看简要统计
+
+###查看已提交的内容git show
+
+* **git show**查看当前commit
+* **git show xxxx\[在 show 后面加上这个 commit 的引用（branch 或 HEAD 标记）或它的 SHA-1 码]**查看任意一个commit
+* **git show 5e68b0d8 filename**看指定 commit 中的指定文件
+
+###查看未提交的内容 git diff
+
+* **git diff --staged/--cached**比对暂存区和上一条提交
+* **git diff**比对工作目录和暂存区
+* **git HEAD**比对工作目录和上一条提交
+
 
 
 
