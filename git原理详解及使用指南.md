@@ -2,7 +2,7 @@
 
 **git clone 地址** 将远程的项目克隆到本地
 	
-**git log** 查看提交日志
+
 
 ###git commit
 
@@ -51,7 +51,7 @@
 
 **git pull** 将中央仓库的最新代码拉取下来
 	
-	当多人合作时每次提交代码或者工作任务之前，需要先pull 然后在进行push
+>当多人合作时每次提交代码或者工作任务之前，需要先pull 然后在进行push
 
 ###git branch
 * **git branch branch-name** 创建一个叫branch-name 的分支
@@ -123,6 +123,14 @@ merge含义：
 > 1.任何新的功能（feature）或者bug修复全都新建一个branch来写
 > 
 > 2.branch写完后，合并到master，然后删掉这个branch
+
+
+
+###查看修改了什么
+
+* **git log** 查看提交日志
+* **git log -p（--patch）** 查看详细历史
+
 
 
 
