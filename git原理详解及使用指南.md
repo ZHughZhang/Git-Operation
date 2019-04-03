@@ -152,6 +152,17 @@ merge含义：
 ### git rebase（重新设置基础点）
 
 
+写错的不是最新提交的，而是倒数第二个？
+
+**git reabse-i**
+
+* 第一步查看**git log** 找到需要修改的commit
+* 第二步使用**git rebase -i HEAD^^ 或者 ~ **向前或者向后移动commit
+* 第三步 将你需要修改的commit的**pick** 修改成**edit**，修完完成后退出编辑
+* 第四步修改写错的**commit git add 文件名**，使用**git commit --amend** 完成修改
+* 第五步使在修复完成之后，就可以用**git rebase --continue** 来继续 rebase 过程，把后面的 commit 直接应用上去。
+
+###reset --hard 丢弃最新的提交
 
 
 
