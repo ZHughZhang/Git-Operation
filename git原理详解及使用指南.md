@@ -149,7 +149,7 @@ merge含义：
 
 ### git rebase（重新设置基础点）
 
-![重新设置挤出点](https://user-gold-cdn.xitu.io/2017/11/30/1600abd620a8e28c?imageslim)
+
 
 
 
