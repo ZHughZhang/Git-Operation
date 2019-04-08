@@ -1,10 +1,11 @@
-###git命令说明
+#git命令说明
+====
 
 **git clone 地址** 将远程的项目克隆到本地
 	
 
 
-###git commit
+### git commit
 
 * **git commit -m "the commit message"** 提交添加到缓存仓库的文件 并添加说明
 * **git commit -a**会先把所有已经track的文件的改动`git add`进来，然后提交(有点像svn的一次提交,不用先暂存)。对于没有track的文件,还是需要执行`git add <file>` 命令。
@@ -24,7 +25,7 @@
 		你可以使用git add来追踪文件
 		
 		
-###git add
+### git add
 
 * **git add \<path\>** 追踪文件 将文件添加至缓存区
 * **git add .**  将所有修改添加到暂存区
@@ -35,14 +36,14 @@
 * **git add Hello?**  将以Hello开头后面只有一位的文件的修改提交到暂存区 例如:Hello1.txt,HelloA.java 如果是HelloGit.txt或者Hello.java是不会被添加的
 * **git add -u [\<path>]** 把<path>中所有跟踪文件中被修改过或已删除文件的信息添加到索引库。它不会处理那些不被跟踪的文件。省略<path>表示 . ,即当前目录。
 
-###git push
+### git push
 * **git push** 将本地仓库的代码提交打远程仓库
 * **git push --set-upstream origin branch-name**设置本地分支追踪远程分支
 * **git push origin branch-name** 将本地分支提交到远程服务器
 * **git push origin --delete branch-name**删除远程服务器上的分支
 * **git branch -d branch-name** 删除本地分支
 
-####总结：
+#### 总结：
 	
 * 从GitHub把中央仓库clone到本地（==git clone==）
 * 撸完代码提交（先 ==git add==  文件名 把文件添加到缓存区，在用==git commit== 提交）
@@ -55,7 +56,7 @@
 	
 >当多人合作时每次提交代码或者工作任务之前，需要先pull 然后在进行push
 
-###git branch
+### git branch
 * **git branch branch-name** 创建一个叫branch-name 的分支
 * **git branch**创建本地分支
 * **git branch -a** 查看所有分支列表，包括本地和远程* **git branch -r** 查看远程版本库分支列表
@@ -63,7 +64,7 @@
 * **git branch -vv**可以查看本地分支对应的远程分支
 * **git branch -m oldName newName** 给分支重命名
 
-###git checkout
+### git checkout
 1. 操作文件 
  * **git checkout filename**放弃单个文件修改
  * **git checkout .**放弃当前目录下的修改  
@@ -74,7 +75,7 @@
 如果分支存在则只切换分支，若不存在则创建并切换到master分支，repo start是对git checkout -b这个命令的封装，将所有仓库的分支都切换到master，master是分支名。
 
 
-###merge
+### merge
 
 merge含义：
  
@@ -101,7 +102,7 @@ merge含义：
 	
 	情景3：两个分支修改了同一部分的内容，merge的自动算法就会失效，这样的情况称之为冲突[Conflict]
 	
-	###冲突
+	### 冲突
 	
 	1. 解决冲突
 		
@@ -116,7 +117,7 @@ merge含义：
 * 特殊情况3：HEAD落后于目标commit:fast-forward。
 
 
-##Feature Branching
+## Feature Branching
 
 
 > 简介:
@@ -128,21 +129,21 @@ merge含义：
 
 
 
-##查看修改了什么
+## 查看修改了什么
 
-###git log
+### git log
 
 * **git log** 查看提交日志
 * **git log -p（--patch）** 查看详细历史
 * **git log stat** 查看简要统计
 
-###查看已提交的内容git show
+### 查看已提交的内容git show
 
 * **git show**查看当前commit
 * **git show xxxx\[在 show 后面加上这个 commit 的引用（branch 或 HEAD 标记）或它的 SHA-1 码]**查看任意一个commit
 * **git show 5e68b0d8 filename**看指定 commit 中的指定文件
 
-###查看未提交的内容 git diff
+### 查看未提交的内容 git diff
 
 * **git diff --staged/--cached**比对暂存区和上一条提交
 * **git diff**比对工作目录和暂存区
@@ -162,14 +163,14 @@ merge含义：
 * 第四步修改写错的**commit git add 文件名**，使用**git commit --amend** 完成修改
 * 第五步使在修复完成之后，就可以用**git rebase --continue** 来继续 rebase 过程，把后面的 commit 直接应用上去。
 
-###reset --hard 丢弃最新的提交
+### reset --hard 丢弃最新的提交
 
 **git reset --hard 目标commit**
 >但是这并不是真正意义上的撤销，只是再也找不到它了。如果你还记得撤销的
 SHA-1码，那么你还可以通过SHA-1来找到它。
 
 
-###想丢弃的也不是最新的提交？
+### 想丢弃的也不是最新的提交？
 
 方法一：
 
@@ -181,7 +182,30 @@ SHA-1码，那么你还可以通过SHA-1来找到它。
 
 >方法有两种，理念是一样的：在 rebase 的过程中去掉想撤销的 commit，让他它消失在历史中。
 
-###代码已经 push 上去了才发现写错？
+### 代码已经 push 上去了才发现写错？
+
+1. 出现的内容在自己的branch
+ **git push origin branch_name -f**   -f 是--force的缩写，意为[忽略冲突，强制push]，需要注意的是这里不能先`pull`一下再去`push`，而是要选择**强行**`push`
+2. 出错的内容已经合并带master
+
+**git revert HEAD^**
+
+上面这行代码就会增加一条新的 `commit`，它的内容和倒数第二个 `commit` 是相反的，从而和倒数第二个 `commit`相互抵消，达到撤销的效果。
+
+在 `revert` 完成之后，把新的 `commit`再 `push` 上去，这个 `commit` 的内容就被撤销了。它和前面所介绍的撤销方式相比，最主要的区别是，这次改动只是被「反转」了，并没有在历史中消失掉，你的历史中会存在两条 `commit` ：一个原始 `commit` ，一个对它的反转 `commit`。
+
+### rest的本质，不止可以撤销提交
+
+```
+git reset --hard HEAD^^  
+撤销当前commit
+```
+### reset 的本质:移动HEAD以及它所指向的branch**
+
+
+
+
+
 
 
 
