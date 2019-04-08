@@ -1,4 +1,4 @@
-#git命令说明
+# git命令说明
 ====
 
 **git clone 地址** 将远程的项目克隆到本地
@@ -200,7 +200,20 @@ SHA-1码，那么你还可以通过SHA-1来找到它。
 git reset --hard HEAD^^  
 撤销当前commit
 ```
-### reset 的本质:移动HEAD以及它所指向的branch**
+### reset 的本质:移动HEAD以及它所指向的branch
+
+**git reset** 就是重置`HEAD`以及它所指向的`branch`的位置
+
+而**git reset --hard HEAD^**之所以起到了撤销`commit`的效果，是因为，它把`HEAD`和他所指向的`branch`一起移动到了当前`commit`的父`commit`上,从而起到了[撤销]的效果.
+
+所以,`reset --hrad`不仅可以撤销提交,还可以把`HEAD`和`branch`y移动到任何地方
+
+```
+git reset --hard branch_name
+```
+
+
+
 
 
 
