@@ -228,6 +228,26 @@ git reset --hard branch_name
 `reset` 如果不加参数，那么默认使用 `--mixed`参数。它的行为是：保留工作目录，并且清空暂存区。
 
 
+### checkout 的本质
+
+`checkout`不止可以切换`branch`.`checkout`本质上的功能其实是:签出(checkout)指定的`commit`.
+
+`git checkout branch_name`的本质,是把`HEAD`指向指定的`branch`,然后签出这个`branch`所对应的`commit`的工作目录.`checkout`的目标也可以不是`branch`,也可以直接指定某个`commit`
+
+```
+git checkout HEAD^^
+
+git checkout master~5
+
+git checkout 78a4bc
+
+git checkout 78a4bc^
+
+git checkout --<file>
+```
+
+
+
 
 
 
