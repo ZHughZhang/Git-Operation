@@ -217,6 +217,11 @@ git reset --hard branch_name
 
 `reset --hard`会重置`HEAD`和`branch`的同时,重置工作目录的内容.当你在`reset`后面加了 `--hard`参数时,你的工作目录的内容就会被完全重置为何`HEAD`的新位置相同的内容,就是你为提交的内容会被全部擦拭掉
 
+### reset --soft:保留工作目录
+
+`reset --soft` 会在重置`HEAD`和`branch`是保留工作目录和暂缓去中的内容,并把重置`HEAD`所带来的心差异放进暂存区
+
+
 
 
 
