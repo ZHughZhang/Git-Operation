@@ -291,6 +291,32 @@ git checkout -b branch_name #创建分支并且检索到分支上
 
 `git reflog master`
 
+### .gitignore------排除不想被管理的文件个目录
+
+
+`.gitignore`的长相
+
+![.gitignore(引用自掘金小册子Git 原理详解及实用指南)](https://user-gold-cdn.xitu.io/2017/11/22/15fe3f2100f33d2a?imageslim)
+
+
+
+## 知识点补充
+
+### 几个不难却很有用的Git技能点
+
+#### tag 不可移动的branch
+
+`tag` 是一个和 `branch` 非常相似的概念，它和 `branch` 最大的区别是：`tag` 不能移动。所以在很多团队中，`tag` 被用来在关键版本处打标记用。
+
+
+### cherry-pick：把选中的 commits 一个个合并进来
+
+### git config： Git 的设置
+
+`git config` 可以对 Git 做出基础设置，例如用户名、用户邮箱，以及界面的展示形式。内容虽然多，但都不难，整体看一遍，把 Git 设置成你最舒服的样子，从此就再也不用管它了。属于「一次付出，终身受用」的高性价比内容。
+
+### Git Flow：复杂又高效的工作流
+
 
 
 	
