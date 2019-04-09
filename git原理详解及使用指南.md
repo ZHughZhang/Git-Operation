@@ -247,6 +247,37 @@ git checkout --<file>
 ```
 
 
+### checkout 和 reset 的不同 (checkout是带着head走，reset是带着两个走)
+
+`checkout`和 `reset` 都可以切换 `HEAD` 的位置，它们除了有许多细节的差异外，最大的区别在于：`reset` 在移动 `HEAD` 时会带着它所指向的 `branch` 一起移动，而 `checkout` 不会。当你用 `checkout` 指向其他地方的时候，`HEAD` 和 它所指向的 `branch` 就自动脱离了。
+
+事实上，`checkout` 有一个专门用来只让 `HEAD` 和 `branch`脱离而不移动 `HEAD` 的用法：
+
+~~~
+git checkout --detach  Git 就会把 HEAD 和 branch 脱离，直接指向当前 commit
+
+~~~
+
+###  紧急情况:立即给我打个包,现在马上
+
+#### 临时存放在工作目录的改动
+
+	git stash 把工作目录暂时清理干净
+	
+	git stash pop 将之前清理的东西找回来
+
+> 没有被track 的文件(即从来没有被add 的文件不会被stash 起来),Git 会忽略它们.如果想把这些文件也一起stash,可以加上'-u',是'--include-untracked'的简写 `git stash -u`
+
+
+### branch删过了才想起来有用
+
+#### reflog:引用的log
+
+`reflog`是"reference log"的缩写,使用它可以查看Git 仓库中引用的移动记录.如果不指定引用,它会显示`HEAD`的移动记录,假如你误删了`branch1`这个`branch`,那么你可以查看HEAD的移动历史:
+
+==git reflog==
+	
+
 
 
 
