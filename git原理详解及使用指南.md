@@ -273,9 +273,26 @@ git checkout --detach  Git 就会把 HEAD 和 branch 脱离，直接指向当前
 
 #### reflog:引用的log
 
-`reflog`是"reference log"的缩写,使用它可以查看Git 仓库中引用的移动记录.如果不指定引用,它会显示`HEAD`的移动记录,假如你误删了`branch1`这个`branch`,那么你可以查看HEAD的移动历史:
+`reflog`是"reference log"的缩写,使用它可以查看Git 仓库中引用的移动记录.如果不指定引用,它会显示`HEAD`的移动记录,假如你误删了`branch1`这个`branch`,那么你可以查看HEAD的移动历史:==git reflog==来查看你的所有的操作记录,利用`git checkout SHA-1`切换到你删除操作的上一此操作的地方,然后`git checkout -b branch_name(误删的分支名字)`来恢复
 
-==git reflog==
+```
+#用到的命令:
+git reflog #查看操作历史记录
+
+git checkout SHA-1 #检索到已被删除目标的上一条操作记录
+
+git checkout -b branch_name #创建分支并且检索到分支上
+```
+
+>注意：不再被引用直接或间接指向的 commits 会在一定时间后被 Git 回收，所以使用 reflog 来找回删除的 branch 的操作一定要及时，不然有可能会由于 commit 被回收而再也找不回来。
+
+#### 查看其它引用的reflog
+
+
+`git reflog master`
+
+
+
 	
 
 
