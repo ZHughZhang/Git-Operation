@@ -1,6 +1,17 @@
 # git命令说明
 ====
 
+
+将本地的已经初始化的项目第一提交到远程仓库
+
+~~~git init
+git add README.md
+git commit -m "first commit"
+git remote add origin url
+git push -u origin master
+~~~
+
+
 **git clone 地址** 将远程的项目克隆到本地
 	
 
